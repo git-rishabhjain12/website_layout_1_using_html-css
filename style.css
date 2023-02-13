@@ -7,79 +7,47 @@
 
 header {
     background-color: lightgrey;
+
 }
 
-header #navbar {
+header .left {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1rem;
-    padding: 10px 0;
-}
-
-header #navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-header #navbar ul li {
-    padding: 0px 1rem;
-}
-
-header #navbar .left {
-    margin: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem 2rem;
+    color: #000;
     font-size: 1.2rem;
-    /* padding: 10px 0; */
 }
 
-header #navbar .left h2 a {
-    padding-right: 2rem;
+header .left h2 a {
     text-decoration: none;
     color: #000;
 }
 
-header #navbar ul li a {
-    text-decoration: none;
-    color: black;
-}
-
-.dropdown {
-    position: relative;
-    width: auto;
-    display: inline-block;
-}
-
-.dropdown a {
-    position: absolute;
-    content: '';
-    top: auto;
-}
-
-header #navbar .left .dropdown a {
-    background-color: grey;
-    text-decoration: none;
+header .left ul {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: black;
-    padding: 5px 15px;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
 }
 
+header .left ul li a {
+    color: #000;
+    padding: 0 1rem;
+    text-decoration: none;
+    font-size: 1.3em;
+}
 
-header #navbar .right button {
+header button {
     padding: 10px 10px;
     border-radius: 15px;
     text-decoration: none;
     color: black;
-    margin-right: 2rem;
     transition: .5s;
     cursor: pointer;
 }
 
-header #navbar .right button span {
+header button span {
     background-color: black;
     color: #fff;
     padding: 1px 4px;
@@ -88,12 +56,12 @@ header #navbar .right button span {
 }
 
 
-header #navbar .right button:hover {
+header button:hover {
     background-color: #000;
     color: #fff;
 }
 
-header #navbar .right button:hover span {
+header button:hover span {
     background-color: #fff;
     color: #000;
 }
@@ -120,6 +88,7 @@ section .heading {
     color: gray;
 }
 
+
 article {
     display: flex;
     justify-content: space-around;
@@ -128,26 +97,30 @@ article {
 }
 
 article img {
-    margin: auto 5rem;
-    width: 600px;
-    height: 700px;
+    margin: auto 4rem;
+    width: 500px;
+    height: 600px;
     padding: 10px;
     border: 2px solid black;
     border-radius: 20px;
 }
 
-article .description #pricing {
-    line-height: 3rem;
+#rightside {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 1.5rem;
 }
 
-.description #pricing h1 {
+#rightside h1 {
     font-size: 3rem;
 }
 
-#productdiscrption {
-    line-height: 30px;
-    width: 80%;
+#productdiscription {
+    line-height: 1.5rem;
+    padding-top: 10px;
 }
+
 
 #addtocartbtn {
     padding-top: 30px;
@@ -180,19 +153,27 @@ footer {
     color: #fff;
     text-align: center;
     height: 100px;
-    font-size: 1.2rem;
-    padding-top: 40px;
+    font-size: 1rem;
+    padding-top: 30px;
 }
 
 @media all and (max-width:950px) {
+    .heading h1 {
+        font-size: 3.5rem;
+    }
+
+    .heading p {
+        font-size: 1.3rem;
+    }
+
     article img {
-        margin: auto 5rem;
+        margin: auto 2rem;
         width: 400px;
         height: 500px;
         padding: 10px;
         border: 2px solid black;
         border-radius: 20px;
-    }   
+    }
 }
 
 @media all and (max-width:800px) {
@@ -201,9 +182,57 @@ footer {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-    } 
-    
+    }
+
     article .description {
         width: auto;
+    }
+}
+
+
+@media all and (max-width:700px) {
+    header #navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .left {
+        flex-direction: column;
+    }
+
+    header .left ul {
+        padding: 1rem 0;
+        flex-direction: column;
+    }
+
+    #rightside {
+        margin: auto;
+        padding: 1.5rem 3rem;
+        width: 100%;
+    }
+}
+
+@media all and (max-width:500px) {
+    body {
+        margin: auto;
+    }
+
+    section .heading {
+        height: 200px;
+    }
+
+    .heading h1 {
+        font-size: 2.5rem;
+    }
+
+    .heading p {
+        font-size: 1.4rem;
+    }
+
+    article img {
+        width: 300px;
+        height: 400px;
     }
 }
