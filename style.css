@@ -29,6 +29,7 @@ header .left ul {
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    position: relative;
 }
 
 header .left ul li a {
@@ -37,6 +38,22 @@ header .left ul li a {
     text-decoration: none;
     font-size: 1.3em;
 }
+
+.left ul li ul {
+    display: none;
+    position: absolute;
+    background: grey;
+    width: max-content;
+    top: 40px;
+    right: -100px;
+    padding: 10px 0px;
+    z-index: 1;
+}
+
+.left ul li:hover ul {
+    display: block;
+}
+
 
 header button {
     padding: 10px 10px;
